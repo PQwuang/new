@@ -1,0 +1,35 @@
+{% extends "pages/mytemp.html" %}
+
+{% block title %}
+Shopping
+{% endblock %}
+
+{% block content %}
+<body style="background-color: whitesmoke;">
+    
+
+<div style="margin-top:125px;" >
+<center>
+<form class="form-signin">
+
+    <h1 class="h3 mb-3 font-weight-normal">Register here</h1>
+    <input class="form-control" placeholder="Your name" required autofocus style="width:25%;">
+    <p></p>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus style="width:25%;">
+    <p></p>
+    
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required style="width:25%;">
+    <p></p>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required style="width:25%;">
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>
+<center>
+</div>
+</body>      
+{% endblock %}
