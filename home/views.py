@@ -10,9 +10,9 @@ def introduction(request):
 def dodientu(request):
     return render(request, 'pages/dodientu.html')
 def bachhoa(request):
-    return render(request, 'pages/trangsuc.html')
-def trangsuc(request):
     return render(request, 'pages/bachhoa.html')
+def trangsuc(request):
+    return render(request, 'pages/trangsuc.html')
 def sign_in(request):
     return render(request, 'pages/sign_in.html')
 def register(request):
