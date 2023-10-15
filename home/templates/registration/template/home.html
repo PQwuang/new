@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block titile %} Home {% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Newspaper</h1>
+    <p class="lead">a news paper</p>
+    <p class="lead">    
+        <a class="btn btn-primary" href="{% url 'article_list' %}" role="button"> Views all articles</a>
+    </p>
+
+</div>   
+{% endblock content %}

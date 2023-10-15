@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>base{% block title %}{% endblock %}</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+<body>
+    <!-- nav bar -->
+    <div class="col-md-12" style="background-color:#ff7337;" style="margin-left: 100%;">
+        <div class="row">
+            <div class="col-md">
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"  style="background-color: #ff7337;border-color: #ff7337;">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="/home">HOME</a>
+                      <a class="dropdown-item" href="about">ABOUT US</a>
+                      <a class="dropdown-item" href="introduction">INTRODUCTION</a>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="col-md">
+                <div>
+                    <input type="text" class="form-control" placeholder="Search" style="width: 75%;">
+                </div>
+            </div>
+            
+            <div class="col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16">
+                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z"></path>
+                  </svg>
+                {% if user.is_authenticated %}
+                    <a href="/users/logout/"><button style="background-color:#ff7337;border: #ff7337;color: white;" >Log out</button></a>
+                {% else %}
+                    <div style="margin-left: 50%;"><a href="/users/signup/"><button style="background-color:#ff7337;border: #ff7337;color: white;">Register</button></a>
+                    <a href="/users/login/"><button style="background-color:#ff7337;border: #ff7337;color: white;" >Sign in</button></a>
+                {% endif %}
+               
+                    <button style="background-color:#ff7337;border: #ff7337;color: white;" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+         
+    
+    {% block content %}
+    
+    {% endblock %}
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

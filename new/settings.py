@@ -26,12 +26,31 @@ SECRET_KEY = 'django-insecure-167pvmzp6^cwu(30qh5x5+qm#*ifd981$(3bsl9*-6(g6vja#*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL ='/'
+
+
 ALLOWED_HOSTS = ['hp4.herokuapp.com']
 
+LOGOUT_REDIRECT_URL='login'
+
+USE_TZ = True
+AUTH_USER_MODEL = 'users.CustomUser'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Application definition
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '00cd9589f79783'
+EMAIL_HOST_PASSWORD = '10293f13b07c51'
+EMAIL_PORT = '2525'
 
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',#new
+    'crispy_forms',
+    'article.apps.ArticleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,13 +58,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'accounts.apps.AccountsConfig',
+    'users.apps.UsersConfig',
+    "crispy_bootstrap4",
 ]
-
+TIME_ZONE='Indochina Time'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

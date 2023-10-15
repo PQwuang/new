@@ -13,7 +13,11 @@ def bachhoa(request):
     return render(request, 'pages/bachhoa.html')
 def trangsuc(request):
     return render(request, 'pages/trangsuc.html')
-def sign_in(request):
-    return render(request, 'pages/sign_in.html')
+def sign_up(request):
+    return render(request, 'pages/sign_up.html')
 def register(request):
     return render(request, 'pages/register.html')
+def editprofile(request):
+    return editprofile(request, 'pages/editprofile.html')
+# def password_change_form(request):
+#     return password_change_form(request, 'pages/password_change_form.html')

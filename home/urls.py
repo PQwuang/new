@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
-
+from django.contrib import admin
+from django.urls import path, include
+from django.views.generic.base import TemplateView #new
 urlpatterns = [
     path("", views.dodientu, name="dodientu"),
     path("about", views.about, name="about"),
@@ -8,6 +10,9 @@ urlpatterns = [
     path("bachhoa", views.bachhoa, name="bachhoa"),
     path("dodientu", views.dodientu, name="dodientu"),
     path("trangsuc", views.trangsuc, name="trangsuc"),
-    path("sign_in", views.sign_in, name="sign_in"),
-    path("register", views.register, name="register"),
+    # path('admin/', admin.site.urls),
+    path('accounts/',include('django.contrib.auth.urls')),#new
+    path("editprofile", views.editprofile, name="editprofile"),
+    path("sign_up", views.sign_up, name="sign_up"),
+    # path("password_change_form", views.password_change_form, name="password_change_form"),
 ]
